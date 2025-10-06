@@ -1,0 +1,168 @@
+// Import Google Font
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f7fafc;
+  color: #1a202c;
+
+  &.dark {
+    background-color: #1a202c;
+    color: #e2e8f0;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+
+  &-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+  }
+
+  &-settings-btn {
+    padding: 8px;
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+  }
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 24px;
+}
+
+// ✅ Unified input + select + button
+.input-group {
+  margin-bottom: 16px;
+  width: 100%;
+  position: relative;
+}
+
+.input-field,
+.button {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+.input-field {
+  border: 1px solid #e2e8f0;
+
+  &:focus {
+    outline: none;
+    border-color: #4299e1;
+  }
+}
+
+.input-suffix {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  pointer-events: none;
+}
+
+.button {
+  background-color: #4299e1;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background-color: #2b6cb0;
+  }
+}
+
+// QR code
+.qr-code-container {
+  position: relative;
+  background-image: url("https://placehold.co/400x400/fff?text=QR+Code");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.qr-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #1a202c;
+  font-size: 14px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+// Bottom navigation
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 64px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+
+  &.active {
+    color: #4299e1;
+    transform: scale(1.1);
+  }
+}

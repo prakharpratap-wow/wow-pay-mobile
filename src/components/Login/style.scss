@@ -1,0 +1,21 @@
+.auth-container {
+  background-color: #f8fbff;
+}
+
+.auth-card {
+  width: 350px;
+  border-radius: 10px;
+  background-color: #fff;
+
+  h4 {
+    font-weight: 600;
+  }
+
+  .link-text {
+    color: #007bff;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
