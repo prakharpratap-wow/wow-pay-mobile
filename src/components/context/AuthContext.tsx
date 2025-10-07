@@ -12,6 +12,8 @@ interface AuthContextType {
   isAuthenticated: boolean;
   login: (accessToken: string, refreshToken: string) => void;
   logout: () => void;
+  userData: any;
+  setUserData: (value: any) => void;
 }
 
 // Set up initial state
@@ -30,6 +32,7 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(checkTokens());
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     // Optional: Add logic here to check token expiry or refresh token silently
@@ -49,7 +52,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider
+      value={{ isAuthenticated, login, logout, userData, setUserData }}
+    >
       {children}
     </AuthContext.Provider>
   );
